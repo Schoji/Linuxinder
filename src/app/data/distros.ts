@@ -80,7 +80,7 @@ export const distros: Distro[] = [
   {
     slug: "zorin",
     name: "Zorin OS",
-    tagline: "I look like your ex. I treat you much better.",
+    tagline: "I look like your ex on purpose. The difference starts after the login screen.",
     description:
       "Yes, I look like Windows. I thought the familiar face might help while you're moving on. Bring your old habits and questionable files - I won't ask who they came from. Rebounds can work out. 😘",
     release_date: new Date("2009-07-01"), // 1.0
@@ -140,7 +140,7 @@ export const distros: Distro[] = [
   {
     slug: "bazzite",
     name: "Bazzite",
-    tagline: "Take me to bed. Or the couch. Or the Steam Deck.",
+    tagline: "I'm read-only where it counts. Everywhere else, do whatever you like.",
     description:
       "Couch, bed, handheld - I'm flexible about location as long as we're gaming. I'm hard to break, quick to recover, and already packed for the weekend. Yes, gaming is my entire personality. 😈",
     release_date: new Date("2023-11-01"), // 1.0, November 2023 (exact day undocumented)
@@ -171,7 +171,7 @@ export const distros: Distro[] = [
   {
     slug: "arch",
     name: "Arch Linux",
-    tagline: "I come with nothing. Bring personality - and Wi-Fi.",
+    tagline: "I come with nothing on. Everything after that is your responsibility.",
     description:
       "I don't come with baggage. I don't come with furniture either. Build the relationship exactly how you want it, then tell everyone how much work that was. By the way, I use me. 😎",
     release_date: new Date("2002-03-11"), // 0.1 "Homer"
@@ -283,7 +283,7 @@ export const distros: Distro[] = [
   {
     slug: "void",
     name: "Void Linux",
-    tagline: "My name is Void. My package manager is full.",
+    tagline: "No parents, no dependencies, and nobody waiting up to ask where I've been.",
     description:
       "No parents, no forks, no systemd, no need to explain myself. I keep my circle small, move quietly, and somehow remain less dramatic than the popular ones. Enter the Void if you're done chasing attention. 😈",
     release_date: new Date("2008-01-01"), // project began in 2008 (exact day undocumented)
@@ -299,7 +299,7 @@ export const distros: Distro[] = [
   {
     slug: "nixos",
     name: "NixOS",
-    tagline: "Describe your ideal partner in one file. I'll rebuild.",
+    tagline: "Write down exactly what you want. In detail. I'll reproduce it perfectly, every time.",
     description:
       "Tell me exactly what you want - in writing. I'll remember every version of us, reproduce our perfect date anywhere, and roll back the moment you ruin it. Spontaneity is just undocumented configuration. 🥰",
     release_date: new Date("2003-01-01"), // research project began in 2003 (exact day undocumented)
@@ -315,7 +315,7 @@ export const distros: Distro[] = [
   {
     slug: "omarchy",
     name: "Omarchy",
-    tagline: "Opinionated, Danish, and I tile everything on the first date.",
+    tagline: "There's no negotiation phase. By Friday your hands know where everything is.",
     description:
       "I arrived fully formed with strong opinions about your editor, your terminal and your keybindings. There's no negotiation phase - just muscle memory you'll have by Friday. Everyone will know we're together, because you won't stop mentioning it. 😎",
     release_date: new Date("2025-06-01"), // first public release, June 2025 (exact day undocumented)
@@ -331,7 +331,7 @@ export const distros: Distro[] = [
   {
     slug: "artix",
     name: "Artix Linux",
-    tagline: "Arch, but I left the ex who managed everything.",
+    tagline: "I left the one who supervised everything I did. Now I choose who watches.",
     description:
       "I kept Arch's looks and dropped the partner who wanted to control my init, my logs, my sockets and my DNS. Now it's OpenRC, runit or s6 - whichever one you like best. Lighter, quieter, and nobody's supervising me. 😌",
     release_date: new Date("2017-09-01"), // split from Arch-OpenRC, 2017 (exact day undocumented)
@@ -379,7 +379,7 @@ export const distros: Distro[] = [
   {
     slug: "pearos",
     name: "pearOS",
-    tagline: "macOS energy. None of the Apple money.",
+    tagline: "All the fruit-flavoured aesthetics, none of the receipts.",
     description:
       "I have the dock, the fonts, the little bounce - everything you liked about the expensive one you couldn't afford. Underneath I'm Arch, so I'm faster and considerably less loyal to a corporation. Fruit-themed and legally distinct. 😏",
     release_date: new Date("2021-08-01"), // first public releases, 2021 (exact day undocumented)
@@ -475,7 +475,7 @@ export const distros: Distro[] = [
   {
     slug: "kali",
     name: "Kali Linux",
-    tagline: "I own six hundred tools and none of them are for you.",
+    tagline: "Give me twenty minutes and your network. Keep the password, I won't need it.",
     description:
       "You swiped right because of the dragon, didn't you. I'm here to test things - networks, hardware, occasionally your ethics. Excellent date, terrible partner, and I will have questions about your Wi-Fi password. 😈",
     release_date: new Date("2013-03-13"), // Kali 1.0
@@ -491,7 +491,7 @@ export const distros: Distro[] = [
   {
     slug: "alpine",
     name: "Alpine Linux",
-    tagline: "Five megabytes. Everything you need, nothing you don't.",
+    tagline: "Five megabytes. Half the internet is running me right now and never noticed.",
     description:
       "I fit inside a container, boot in a blink, and refuse to carry anything I'm not actively using. Half the internet is running a copy of me right now without knowing my name. Minimalism isn't a phase here. 😌",
     release_date: new Date("2005-08-01"), // forked from LEAF, 2005 (exact day undocumented)
@@ -539,7 +539,7 @@ export const distros: Distro[] = [
   {
     slug: "puppy",
     name: "Puppy Linux",
-    tagline: "I boot into RAM and I run as root. Live a little.",
+    tagline: "I run as root and I never ask permission. Nobody here is going to stop us.",
     description:
       "I'm tiny, instant, and I fit on whatever media you found in a drawer. Everything opens the moment you click it because I'm already living entirely in memory. Twenty years old and still the most fun a discarded laptop can have. 😜",
     release_date: new Date("2003-06-01"), // first releases by Barry Kauler, June 2003 (exact day undocumented)
@@ -555,7 +555,7 @@ export const distros: Distro[] = [
   {
     slug: "garuda",
     name: "Garuda Linux",
-    tagline: "Blurred glass, a dragon logo, and zram for breakfast.",
+    tagline: "I'm tuned until the fans notice. Snapshots exist for the 2am decisions.",
     description:
       "I'm loud, animated, and tuned until your fans have an opinion. Every performance tweak in the wiki is already switched on, plus snapshots so you can undo whatever you're about to do at 2am. Subtle people swiped left. You didn't. 😈",
     release_date: new Date("2020-03-26"), // first public release, March 2020
@@ -587,7 +587,7 @@ export const distros: Distro[] = [
   {
     slug: "tails",
     name: "Tails",
-    tagline: "I forget everything the moment you close the lid.",
+    tagline: "I won't remember any of this tomorrow. Neither will the drive.",
     description:
       "Every route we take goes through Tor, and every trace of us disappears when you power down. No history, no logs, no awkward morning after. If you need to be nobody for one evening, I'm already packed. 🫥",
     release_date: new Date("2009-06-23"), // first release as amnesia/Incognito, June 2009
@@ -635,7 +635,7 @@ export const distros: Distro[] = [
   {
     slug: "devuan",
     name: "Devuan GNU+Linux",
-    tagline: "I left Debian over one very specific argument.",
+    tagline: "I walked out over one argument. Everything else about me stayed exactly as good.",
     description:
       "They adopted systemd; I packed my things. Everything you loved about Debian is still here - the stability, the archive, the patience - just without something supervising my every process. Principled, not petty. Mostly. 🙂",
     release_date: new Date("2017-05-25"), // Devuan 1.0 "Jessie"
@@ -763,7 +763,7 @@ export const distros: Distro[] = [
   {
     slug: "linuxfx",
     name: "Linuxfx",
-    tagline: "I resemble Windows so closely that lawyers noticed.",
+    tagline: "I resemble the one you left so closely that lawyers eventually got involved.",
     description:
       "Start menu, widgets, the whole look - I'll even run your .exe files through Wine and throw in an assistant nobody requested. I've changed my name a couple of times since we last spoke. Let's not dwell on why. 🤭",
     release_date: new Date("2020-04-01"), // the Windows-lookalike editions arrive, 2020 (exact day undocumented)
@@ -859,7 +859,7 @@ export const distros: Distro[] = [
   {
     slug: "gentoo",
     name: "Gentoo Linux",
-    tagline: "Compile me. Slowly. With exactly the flags you like.",
+    tagline: "It takes me all night, but you'll feel every optimisation in the morning.",
     description:
       "Nothing about me is prebuilt. You pick the features, the flags and the optimisations, and I spend the evening becoming precisely what you asked for. High effort, high reward, and insufferable at parties. 😎",
     release_date: new Date("2002-03-31"), // Gentoo 1.0
@@ -923,7 +923,7 @@ export const distros: Distro[] = [
   {
     slug: "slackware",
     name: "Slackware Linux",
-    tagline: "The oldest one still standing. I predate your account.",
+    tagline: "Since 1993. You'll be doing everything by hand, and you'll finally understand why.",
     description:
       "1993. No dependency resolver, no hand-holding, no committee. Edit the text file, run the script, understand exactly what happened and why. Everyone who really learned Linux learned it from someone like me. 😌",
     release_date: new Date("1993-07-17"), // Slackware 1.0
@@ -939,7 +939,7 @@ export const distros: Distro[] = [
   {
     slug: "silverblue",
     name: "Fedora Silverblue",
-    tagline: "You can't break me. I've checked. Twice.",
+    tagline: "You can't break me. And if you try, I wake up tomorrow like nothing happened.",
     description:
       "My system files are read-only and every update is an entirely new image, with the previous one still sitting there one reboot away. Flatpaks for your apps, a container for your development mess. Ruin me and I'll roll back to before we met. 😌",
     release_date: new Date("2018-10-30"), // named Silverblue with Fedora 29
@@ -955,7 +955,7 @@ export const distros: Distro[] = [
   {
     slug: "steamos",
     name: "SteamOS",
-    tagline: "I came with the handheld and I never left the couch.",
+    tagline: "One button and I'm ready. There's a whole desktop behind me if you want more.",
     description:
       "Press power, land in Big Picture, play. Someone at Valve spent years teaching Windows games to behave on Linux so that you'd never have to think about any of it. There's a full Plasma desktop behind the curtain if you get curious. 🎮",
     release_date: new Date("2013-12-13"), // SteamOS 1.0 beta
@@ -1003,7 +1003,7 @@ export const distros: Distro[] = [
   {
     slug: "qubes",
     name: "Qubes OS",
-    tagline: "Security by isolation. I compartmentalise. It's healthy.",
+    tagline: "Whatever happens in the disposable one stays there. It dies when we're finished.",
     description:
       "Your banking lives in one virtual machine, your work in another, and that suspicious attachment in a disposable one that dies the moment you close it. Nothing I do can touch anything else. Snowden recommended me, apparently. 🧊",
     release_date: new Date("2012-09-03"), // Qubes OS 1.0
@@ -1019,7 +1019,7 @@ export const distros: Distro[] = [
   {
     slug: "whonix",
     name: "Whonix",
-    tagline: "Two machines, one gateway, zero leaks.",
+    tagline: "I don't even know where I am. Whatever we do, nobody can trace it back.",
     description:
       "I split myself in half so that your workstation never learns its own IP address. Everything goes through Tor because physically nothing else can get out. Even malware with root privileges has nobody to tell. 🕵️",
     release_date: new Date("2012-01-01"), // project began as TorBOX, 2012 (exact day undocumented)
@@ -1035,7 +1035,7 @@ export const distros: Distro[] = [
   {
     slug: "trisquel",
     name: "Trisquel GNU/Linux",
-    tagline: "One hundred percent libre. Including the awkward parts.",
+    tagline: "Nothing about me is hidden. You can read every single line before you commit.",
     description:
       "Ubuntu with every proprietary line removed - no blobs, no closed firmware, nothing you can't read for yourself. The Free Software Foundation endorses me and Stallman actually uses me. Principles, quietly, all the way down. ✊",
     release_date: new Date("2005-01-01"), // project began, 2005 (exact day undocumented)
@@ -1083,7 +1083,7 @@ export const distros: Distro[] = [
   {
     slug: "blackarch",
     name: "BlackArch Linux",
-    tagline: "Two thousand security tools. Already installed.",
+    tagline: "I don't replace what you already have. I just add two thousand things on top.",
     description:
       "I'm less a distribution than a very large armoury you can bolt onto an Arch install you already have. Tiling window managers, no desktop niceties, and more tools than you will ever find time to run. 😈",
     release_date: new Date("2013-01-01"), // first public images, 2013 (exact day undocumented)
@@ -1099,7 +1099,7 @@ export const distros: Distro[] = [
   {
     slug: "kodachi",
     name: "Linux Kodachi",
-    tagline: "VPN, then Tor, then DNS nobody can follow.",
+    tagline: "VPN, then Tor, then nothing. By the time we're done there's nothing left to find.",
     description:
       "I chain a VPN into Tor before you've finished logging in, and I wipe the evidence on the way out. Every panel on my desktop tells you precisely how invisible you currently are. Anxious? Same, honestly. 🕶️",
     release_date: new Date("2013-01-01"), // first public releases, 2013 (exact day undocumented)
@@ -1115,7 +1115,7 @@ export const distros: Distro[] = [
   {
     slug: "tinycore",
     name: "Tiny Core Linux",
-    tagline: "Sixteen megabytes. Yes, that's the whole desktop.",
+    tagline: "Sixteen megabytes. I'm smaller than the photo you swiped on.",
     description:
       "I'm smaller than the photo you swiped on. I load into memory, put a graphical desktop in front of you, and let you add exactly the pieces you want and absolutely nothing else. Minimalism, taken personally. 🤏",
     release_date: new Date("2009-01-15"), // Tiny Core 1.0, January 2009
@@ -1243,7 +1243,7 @@ export const distros: Distro[] = [
   {
     slug: "chimera",
     name: "Chimera Linux",
-    tagline: "BSD tools, LLVM everywhere, and not a GNU in sight.",
+    tagline: "There's no installer. You'll have to do the whole thing with your hands.",
     description:
       "I'm assembled from parts nobody else combines - FreeBSD's userland, the Clang toolchain, Dinit for services and Alpine's package manager. It shouldn't work as well as it does. There's no installer either; bootstrap me by hand. 😌",
     release_date: new Date("2021-06-01"), // project began, mid-2021 (exact day undocumented)
@@ -1291,7 +1291,7 @@ export const distros: Distro[] = [
   {
     slug: "guix",
     name: "Guix System",
-    tagline: "Declarative, reproducible, and written entirely in Lisp.",
+    tagline: "Tell me in Scheme and I'll do it exactly. Again tomorrow. Again in ten years.",
     description:
       "Describe the system you want in Scheme and I'll build exactly that, roll it back whenever you ask, and reproduce it identically years from now on someone else's machine. Fully free software throughout. Parentheses are a love language. 🥰",
     release_date: new Date("2013-01-18"), // GNU Guix 0.1
