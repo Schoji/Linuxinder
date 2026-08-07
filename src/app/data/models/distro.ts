@@ -15,4 +15,5 @@ export type Distro = {
     website: string,
 
     tags: Tag[],
+    red_flag: string
 }

@@ -12,9 +12,10 @@ export const distros: Distro[] = [
     originCountry: "Germany",
     basedOn: "Arch",
     logo_path: "/logos/cachyos.png",
-    screenshot_path: "/screenshots/cachyos.png",
+    screenshot_path: "/screenshots/cachyos.webp",
     website: "https://cachyos.org",
     tags: [Tag.Rolling, Tag.Gaming, Tag.Ricing],
+    red_flag: "I'm Arch underneath. One badly timed update and you get a black screen.",
   },
   {
     slug: "mint",
@@ -29,6 +30,7 @@ export const distros: Distro[] = [
     screenshot_path: "/screenshots/mint.png",
     website: "https://linuxmint.com",
     tags: [Tag.Stable, Tag.Beginner, Tag.Polished],
+    red_flag: "Wayland is still 'experimental' here, and I skip releases for months.",
   },
   {
     slug: "mx",
@@ -43,6 +45,7 @@ export const distros: Distro[] = [
     screenshot_path: "/screenshots/mx.png",
     website: "https://mxlinux.org",
     tags: [Tag.Stable, Tag.Lightweight, Tag.Beginner],
+    red_flag: "I boot sysVinit by default and pull from Debian's slowest branch.",
   },
   {
     slug: "popos",
@@ -57,6 +60,7 @@ export const distros: Distro[] = [
     screenshot_path: "/screenshots/popos.png",
     website: "https://pop.system76.com",
     tags: [Tag.Stable, Tag.Gaming, Tag.Polished],
+    red_flag: "COSMIC was rewritten from scratch. Multi-monitor still has rough edges.",
   },
   {
     slug: "debian",
@@ -71,6 +75,7 @@ export const distros: Distro[] = [
     screenshot_path: "/screenshots/debian.png",
     website: "https://www.debian.org",
     tags: [Tag.Stable, Tag.Server, Tag.Diy],
+    red_flag: "By the time I call software ready, upstream has shipped three more.",
   },
   {
     slug: "zorin",
@@ -85,6 +90,7 @@ export const distros: Distro[] = [
     screenshot_path: "/screenshots/zorin.png",
     website: "https://zorin.com",
     tags: [Tag.Stable, Tag.Beginner, Tag.WindowsLike],
+    red_flag: "Half of what you want sits behind a paywall, and my base is two years old.",
   },
   {
     slug: "fedora",
@@ -99,6 +105,7 @@ export const distros: Distro[] = [
     screenshot_path: "/screenshots/fedora.png",
     website: "https://fedoraproject.org",
     tags: [Tag.Corporate, Tag.Polished, Tag.Server],
+    red_flag: "I drop support after 13 months and ship no codecs. Enjoy the extra repos.",
   },
   {
     slug: "ubuntu",
@@ -113,6 +120,7 @@ export const distros: Distro[] = [
     screenshot_path: "/screenshots/ubuntu.png",
     website: "https://ubuntu.com",
     tags: [Tag.Stable, Tag.Beginner, Tag.Corporate],
+    red_flag: "Snaps. I put them back after you remove them, and Firefox opens slowly.",
   },
   {
     slug: "endeavour",
@@ -127,6 +135,7 @@ export const distros: Distro[] = [
     screenshot_path: "/screenshots/endeavour.png",
     website: "https://endeavouros.com",
     tags: [Tag.Rolling, Tag.Diy, Tag.Ricing],
+    red_flag: "Ask for help and I'll point at the Arch wiki. That's the support model.",
   },
   {
     slug: "bazzite",
@@ -141,5 +150,6 @@ export const distros: Distro[] = [
     screenshot_path: "/screenshots/bazzite.png",
     website: "https://bazzite.gg",
     tags: [Tag.Immutable, Tag.Gaming, Tag.Polished],
+    red_flag: "My filesystem is read-only. Every package you layer on costs a reboot.",
   },
 ];

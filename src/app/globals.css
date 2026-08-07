@@ -24,4 +24,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  /* A dragged card travels past the viewport edge; without this it widens the
+     document and a horizontal scrollbar appears mid-swipe. */
+  overflow-x: hidden;
 }
