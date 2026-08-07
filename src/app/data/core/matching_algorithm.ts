@@ -3,17 +3,39 @@ import { Tag } from "../models/tag";
 
 type Candidate = { kind: string; text: string; weight: number };
 
+/**
+ * How many cards one run deals. The catalogue is far larger and keeps growing;
+ * the run length is a pacing decision and should not grow with it.
+ */
+export const DECK_SIZE = 15;
+
+/** Fisher-Yates. Shuffles the array you pass in, in place. */
+function shuffleInPlace<T>(items: T[]) {
+    for (let i = items.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [items[i], items[j]] = [items[j], items[i]];
+    }
+}
+
 export class MatchingAlgorithm {
     distributionList: Distro[];
     allDistributions: Distro[];
+    /** Cards this run will deal: DECK_SIZE, or the catalogue if it is smaller. */
+    readonly deckSize: number;
     preferences: Record<Tag, number> = Object.fromEntries(Object.values(Tag).map(tag => [tag, 0])) as Record<Tag, number>;
     // Partial: a key only shows up once that tag has actually been swiped on.
     seenTags: Record<Tag, number> = Object.fromEntries(Object.values(Tag).map(tag => [tag, 0])) as Record<Tag, number>;
     likedTags: Record<Tag, number> = Object.fromEntries(Object.values(Tag).map(tag => [tag, 0])) as Record<Tag, number>;
     
-    constructor(distros: Distro[]) {
+    constructor(distros: Distro[], deckSize: number = DECK_SIZE) {
         this.distributionList = [...distros];
         this.allDistributions = distros;
+
+        // Never promise more cards than the catalogue actually holds.
+        let size = deckSize;
+        if (size > distros.length) size = distros.length;
+        if (size < 0) size = 0;
+        this.deckSize = size;
     }
 
     private shuffled = false;
@@ -23,11 +45,12 @@ export class MatchingAlgorithm {
      * back into the server render and hand the client a different deck.
      */
     private shuffleDeck() {
-        for (let i = this.distributionList.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [this.distributionList[i], this.distributionList[j]] =
-                [this.distributionList[j], this.distributionList[i]];
-        }
+        shuffleInPlace(this.distributionList);
+
+        // Cut to the run length only now. Trimming before the shuffle would
+        // deal the same opening slice of the catalogue every time.
+        this.distributionList = this.distributionList.slice(0, this.deckSize);
+
         this.shuffled = true;
     }
 
@@ -54,14 +77,12 @@ export class MatchingAlgorithm {
             this.preferences[tag]++;
             this.likedTags[tag]++
         });
-        console.log(this.preferences);
     }
 
     public dislikeDistro(distro: Distro) {
         distro.tags.forEach(tag => {
             this.preferences[tag]--;
         });
-        console.log(this.preferences);
     }
 
     public pickWinners() {
@@ -70,7 +91,13 @@ export class MatchingAlgorithm {
             const score = distro.tags.reduce((sum, t) => sum + this.preferences[t], 0) / distro.tags.length
             all_score.set(distro.slug, score)
         }
-        const winners = Array.from(all_score.entries()).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([slug, score]) => ({ slug, score }))
+        // A tie has to be settled by chance, not by position in distros.ts.
+        // sort is stable, and over a 15-card run two thirds of games end in a
+        // tie for first, so without this the same entry would win every time.
+        const entries = Array.from(all_score.entries())
+        shuffleInPlace(entries)
+
+        const winners = entries.sort((a, b) => b[1] - a[1]).slice(0, 3).map(([slug, score]) => ({ slug, score }))
         return winners
     }
 
@@ -85,14 +112,14 @@ public getSentences(winner: Distro): string[] {
     const seen = (t: Tag) => this.seenTags[t];
     const candidates: Candidate[] = [];
 
-    // level 2 — sprzeczność z winnerem (najciekawsze, największy weight)
+    // level 2 — contradicts the winner (the most interesting line, so the heaviest weight)
     for (const t of winner.tags) {
         if (seen(t) >= 3 && this.likedTags[t] === 0)
             candidates.push({ kind: "contradiction", weight: 1000 + seen(t),
                 text: `You rejected everything ${t}. Your match is ${winner.name}.` });
     }
 
-    // level 1 — scalone, nie po jednym na tag
+    // level 1 — merged into one line, not one line per tag
     const always = tags.filter(t => seen(t) >= 3 && this.likedTags[t] === seen(t));
     const never  = tags.filter(t => seen(t) >= 3 && this.likedTags[t] === 0);
     const evidence = (list: Tag[]) => list.reduce((s, t) => s + seen(t), 0);
