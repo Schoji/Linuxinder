@@ -117,6 +117,21 @@ resolves toward like or pass as you cross the threshold, and the next two cards 
 already mounted underneath so promoting one costs no network round trip.
 `useReducedMotion` collapses all of it to instant for anyone who asked for that.
 
+## Credits and licensing
+
+The code is MIT (see [LICENSE](LICENSE)). The artwork is not, and the difference
+matters if you fork this.
+
+**Tux** — the penguin in [the app icon](src/app/icon.svg) — is © Larry Ewing, Simon
+Budig and Anja Gerwinski, and is licensed under the
+[GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or any later version.
+The notice is kept inside the SVG itself so it survives being copied out of this repo.
+
+**Desktop screenshots** are credited individually in
+[public/screenshots/ATTRIBUTION.md](public/screenshots/ATTRIBUTION.md). Most come from
+DistroWatch's per-distribution pages; a handful were sourced from Wikimedia Commons
+under GPL or CC BY-SA, and those carry an author and a licence in that table.
+
 ## Disclaimer
 
 Linuxinder is satire. The red flags are real complaints, but they are chosen to be
