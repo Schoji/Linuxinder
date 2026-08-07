@@ -1,36 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+# 🔥 Linuxinder
 
-First, run the development server:
+**Tinder, but for Linux distributions.**
+
+Swipe right on rolling releases. Swipe left on anything that ships GNOME 3.
+Find the distro that finally understands you.
+
+*This is a joke. Please do not make life decisions based on it.*
+
+</div>
+
+---
+
+## What is this?
+
+Every distro on Linuxinder has a dating profile: a screenshot, a tagline written in
+its own voice, a short bio, a few personality tags — and one red flag it only admits
+to after you've already matched.
+
+> **CachyOS** — *"Recompiled just for your CPU. Yes, that's flirting."*
+> 🚩 I'm Arch underneath. One badly timed update and you get a black screen.
+
+> **Debian** — *"Half your exes were built on top of me."*
+> 🚩 By the time I call software ready, upstream has shipped three more.
+
+> **Linux Mint** — *"I will never surprise you. That's the whole point."*
+> 🚩 Wayland is still 'experimental' here, and I skip releases for months.
+
+You swipe through the deck. At the end you get a match, two runners-up, and a short
+read on your taste that is somehow more judgemental than it needs to be:
+
+> *"You rejected everything immutable. Your match is EndeavourOS."*
+> *"You swiped right on every gaming distro."*
+
+Then you share the link and let someone else find out what you're into.
+
+## How the matching works
+
+There is an actual algorithm in here, which is the funniest part.
+
+Every distro carries a handful of tags from a fixed vocabulary — `rolling`, `stable`,
+`immutable`, `beginner`, `terminal`, `diy`, `ricing`, `gaming`, `lightweight`,
+`privacy`, `systemd-free`, `will-break`, `windows-like`, `mac-like`, `obscure`, and
+friends. See [tag.ts](src/app/data/models/tag.ts) for the full list of things you can
+be attracted to.
+
+[`MatchingAlgorithm`](src/app/data/core/matching_algorithm.ts) keeps three tallies:
+
+| Tally | Meaning |
+| --- | --- |
+| `preferences` | `+1` per tag on a right swipe, `-1` on a left swipe |
+| `seenTags` | how often each tag has been put in front of you |
+| `likedTags` | how often you said yes to it |
+
+At the end, every distro in the catalogue — including the ones you never saw — is
+scored as the mean of its tags' preference values, and the top three are your match
+and runners-up. Nothing else is weighted, and that is deliberate: overthink it and it
+stops being funny.
+
+The verdict lines come from the same three tallies. `seenTags` versus `likedTags` is
+what lets it notice a contradiction ("you rejected every `immutable` distro, and your
+match is immutable"), and a contradiction always outranks the generic
+"you leaned hardest into `X`" fallback.
+
+## Running it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm build && pnpm start   # production
+pnpm lint                  # eslint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Adding a distro
 
-## Learn More
+Append one object to the array in [distros.ts](src/app/data/distros.ts):
 
-To learn more about Next.js, take a look at the following resources:
+```ts
+{
+  slug: "gentoo",
+  name: "Gentoo",
+  tagline: "I'll be ready in four hours. Worth the wait.",
+  description: "…",
+  release_date: new Date("2002-03-31"),
+  originCountry: "USA",
+  basedOn: "Independent",
+  logo_path: "/logos/gentoo.png",
+  screenshot_path: "/screenshots/gentoo.png",
+  website: "https://www.gentoo.org",
+  tags: [Tag.Diy, Tag.Terminal, Tag.WillBreak],
+  red_flag: "…",
+}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Drop the screenshot in [public/screenshots/](public/screenshots/) — 16:9 keeps it
+uncropped, since the card renders it in an `aspect-video` box. Tags have to come from
+the `Tag` enum; the scoring only knows about those. No other file needs touching.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+A tagline should sound like the distro talking. A red flag should be true.
 
-## Deploy on Vercel
+## Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Next.js 16 (App Router, React Compiler on) · React 19 · TypeScript · Tailwind CSS v4 ·
+Motion for the swipe physics · lucide-react for icons · pnpm.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The card is deliberately shaped like a window rather than a photo — title bar, three
+dots, screenshot below — because a desktop screenshot in a Tinder frame is the whole
+premise in one image. Dragging is real drag: the card tilts into the throw, a glow
+resolves toward like or pass as you cross the threshold, and the next two cards are
+already mounted underneath so promoting one costs no network round trip.
+`useReducedMotion` collapses all of it to instant for anyone who asked for that.
+
+## Disclaimer
+
+Linuxinder is satire. The red flags are real complaints, but they are chosen to be
+unflattering rather than balanced, and the "algorithm" is fifteen lines of arithmetic
+over tags someone assigned by vibe. If it matches you with something, that is a
+suggestion to go read the distro's actual documentation, not a result.
+
+Do not `dd` anything to a USB stick because a website with a flame logo told you to.
+
+---
+
+<div align="center">
+
+[Piotr Wittig](https://piotrwittig.com) · 2026
+
+</div>
