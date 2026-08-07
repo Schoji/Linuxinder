@@ -3,6 +3,24 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Driven by viewport HEIGHT, not width. The swipe controls live under the
+     card, and a fixed 42rem card pushes them off a 1080p screen entirely - the
+     screenshot is the only part with enough give to buy that room back.
+     35rem is everything else stacked vertically, measured in the browser
+     rather than estimated: bars, progress, title bar, card body, buttons,
+     hint. *1.5 turns the height left over into a width at the image's 3:2
+     ratio. Anything taller than 1008px hits the 42rem cap and gets the card at
+     full size, so 1440p and 4k never pay for this. */
+  --card-width: clamp(20rem, min(94vw, (100dvh - 35rem) * 1.5), 42rem);
+}
+
+/* Phones get the full width instead: deriving it from height here would shrink
+   the card to nothing on a 667px screen, and dvh moves as the URL bar hides. */
+@media (max-width: 40rem) {
+  :root {
+    --card-width: 94vw;
+  }
 }
 
 @theme inline {
@@ -20,11 +38,30 @@
   }
 }
 
+/* iOS paints a grey box over anything tappable for the duration of the tap.
+   On round buttons it flashes as a square, which is exactly the frame the
+   press animation is trying to own. */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* A card thrown to x:900 travels past the viewport edge and widens the
+   document. `clip` rather than `hidden`, and on the root rather than the body:
+   `hidden` on one axis forces the other from `visible` to `auto`, which turns
+   the element into a scroll container - so the old rule here made body scroll
+   vertically while the document still grew sideways, and both bars showed up
+   mid-swipe. `clip` cuts without creating a scroll container and leaves the
+   vertical axis to the viewport. hidden stays first as the fallback for
+   Safari before 16, which does not know `clip`. */
+html,
+body {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  /* A dragged card travels past the viewport edge; without this it widens the
-     document and a horizontal scrollbar appears mid-swipe. */
-  overflow-x: hidden;
 }
