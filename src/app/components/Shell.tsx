@@ -1,14 +1,27 @@
 import type { ReactNode } from "react";
 
+import GitHubStars from "./GitHubStars";
+
 // The page chrome: background, top bar, bottom bar. Lives here rather than in
 // layout.tsx because the error routes need the same frame around content that
 // is not the deck, and duplicating three copies of it is how they drift apart.
-const Shell = ({ children }: { children: ReactNode }) => {
+const Shell = ({
+  children,
+  stars = null,
+}: {
+  children: ReactNode;
+  /** Star count for the header button. Null hides the number, not the link. */
+  stars?: number | null;
+}) => {
   return (
     // The bars are h-16 and h-12, so the padding has to clear them before it
     // buys any gap. Kept tight on purpose: every rem here is a rem the card
     // cannot spend on its screenshot at 1080p.
     <div className="flex flex-col items-center justify-center flex-1 gap-6 sm:gap-8 pt-20 pb-4 sm:pt-24 sm:pb-16 font-sans bg-zinc-50 bg-[radial-gradient(ellipse_at_top,#ffffff_0%,#fafafa_60%)] dark:bg-[#1a1a2e] dark:bg-[radial-gradient(ellipse_at_top,#24243f_0%,#1a1a2e_60%)]">
+      {/* The star button is pinned to the right rather than sitting in the
+          flow, so the wordmark stays optically centred on the viewport instead
+          of being pushed off by whatever is beside it. No `relative` needed:
+          `fixed` already establishes the containing block. */}
       <header className="fixed top-0 z-10 w-full h-16 border-b border-b-[#2e2e4a] flex justify-center items-center text-2xl font-semibold backdrop-blur-md bg-zinc-50/60 dark:bg-[#1a1a2e]/60">
         <h1 className="text-2xl font-bold">
           <a href={"/"} className="flex items-center gap-3">
@@ -35,6 +48,9 @@ const Shell = ({ children }: { children: ReactNode }) => {
             </span>
           </a>
         </h1>
+        <div className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2">
+          <GitHubStars stars={stars} />
+        </div>
       </header>
       {children}
       {/* Static on phones. Pinned, it costs 3rem of a viewport that iOS Safari
