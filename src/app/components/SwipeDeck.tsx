@@ -1,19 +1,14 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { motion, useMotionValue, useTransform, type PanInfo } from "motion/react";
+import { useState } from "react";
+import { motion } from "motion/react";
 import { Heart, Star, X } from "lucide-react";
 
 import { Distro } from "../data/models/distro";
 import { useMotionPresets } from "../hooks/use_motion_presets";
-import {
-  DECK_OFFSET,
-  DECK_SCALE_STEP,
-  GLOW_FULL,
-  GLOW_START,
-  ROTATE_DIVISOR,
-} from "../lib/animation";
+import { DECK_OFFSET, DECK_SCALE_STEP, ROTATE_DIVISOR } from "../lib/animation";
 import DistroCard from "./DistroCard";
+import SwipeCard from "./SwipeCard";
 import ProgressRail from "./ProgressRail";
 
 type Props = {
@@ -49,15 +44,6 @@ const SwipeDeck = ({
   const { reducedMotion, spring, buttonSpring, buttonTap, buttonHover } =
     useMotionPresets();
 
-  // Drag-to-swipe. x is the live offset; rotate is derived from it so the card
-  // tilts into the throw.
-  const x = useMotionValue(0);
-  const rotate = useTransform(x, [-400, 400], [-20, 20]);
-
-  // Verdict glow: fades in as the card crosses toward either threshold.
-  const passGlow = useTransform(x, [-GLOW_FULL, -GLOW_START], [1, 0]);
-  const likeGlow = useTransform(x, [GLOW_START, GLOW_FULL], [0, 1]);
-
   // The card being thrown away lives on its own so the deck can advance at
   // once - waiting for the animation to finish is what made the next card
   // ungrabbable.
@@ -68,41 +54,24 @@ const SwipeDeck = ({
     fromGlow: number;
   } | null>(null);
 
-  const cardRef = useRef<HTMLDivElement>(null);
-
-  const commit = (direction: "like" | "pass") => {
+  // fromX and fromGlow come from the card itself, which is the only thing that
+  // knows how far it was thrown and how lit its verdict border already was.
+  const commit = (
+    direction: "like" | "pass",
+    fromX: number,
+    fromGlow: number,
+  ) => {
     if (distro === null) return;
 
-    const fromX = x.get();
     setExitingCard({
       distro,
       dir: direction === "like" ? 1 : -1,
       fromX, // pick up where the drag left off, so it does not jump
-      // The card being replaced has its verdict border lit to exactly this
-      // much. A button press starts at 0 and lights it on the way out; a drag
-      // hands over mid-glow, and starting anywhere else is a visible flash.
-      fromGlow: Math.min(
-        1,
-        Math.max(0, (Math.abs(fromX) - GLOW_START) / (GLOW_FULL - GLOW_START)),
-      ),
+      fromGlow,
     });
 
     if (direction === "like") onLike();
     else onPass();
-
-    x.set(0);
-  };
-
-  const onDragEnd = (_event: unknown, info: PanInfo) => {
-    // A share of the card rather than a flat 120px: the same throw was 18% of
-    // a 672px desktop card and a third of the way across a 367px phone one,
-    // which is most of what made swiping on a phone feel like work.
-    const width = cardRef.current?.offsetWidth ?? 672;
-    const threshold = Math.min(120, width * 0.28);
-
-    if (info.offset.x > threshold) commit("like");
-    else if (info.offset.x < -threshold) commit("pass");
-    // Below the threshold dragConstraints springs it back on its own.
   };
 
   return (
@@ -155,54 +124,16 @@ const SwipeDeck = ({
         })}
 
         {distro && (
-          <motion.div
-            // Keyed by slug so each new card mounts fresh and animates up from
-            // exactly where it sat in the deck.
+          // Keyed by slug so each card mounts fresh - a new element, and with
+          // it a new motion value that starts at zero.
+          <SwipeCard
             key={distro.slug}
-            ref={cardRef}
-            // touch-none! has to win against an inline style: Motion writes
-            // touch-action: pan-y itself for drag="x", which hands the browser
-            // every gesture with any vertical component at all - on iOS that is
-            // most of them, and once the scroller has taken a gesture it never
-            // gives it back. The card owns what happens on the card; the page
-            // still scrolls from anywhere else.
-            className="relative cursor-grab active:cursor-grabbing select-none touch-none!"
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={0.7}
-            dragMomentum={false}
-            style={{ x, rotate }}
-            // Exactly where it was sitting as the first card of the deck, so
-            // promotion is one continuous move rather than a cut.
-            initial={{ y: DECK_OFFSET, scale: 1 - DECK_SCALE_STEP }}
-            animate={{ y: 0, scale: 1 }}
-            transition={spring}
-            onDragEnd={onDragEnd}
-          >
-            <DistroCard
-              distro={distro}
-              small={false}
-              // Only the opening card: it is what LCP measures. Later cards are
-              // already decoded from their turn in the deck behind.
-              priority={index === 0}
-            />
-            <motion.div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 rounded-xl border-4 border-[#ec4899]"
-              style={{
-                opacity: passGlow,
-                boxShadow: "0 0 60px 8px rgba(236,72,153,0.45)",
-              }}
-            />
-            <motion.div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 rounded-xl border-4 border-[#6ee7a0]"
-              style={{
-                opacity: likeGlow,
-                boxShadow: "0 0 60px 8px rgba(110,231,160,0.45)",
-              }}
-            />
-          </motion.div>
+            distro={distro}
+            // Only the opening card: later cards are already decoded from
+            // their turn in the deck behind.
+            priority={index === 0}
+            onCommit={commit}
+          />
         )}
 
         {/* The thrown card, already detached from the deck. */}
@@ -265,7 +196,7 @@ const SwipeDeck = ({
           whileTap={buttonTap}
           transition={buttonSpring}
           className="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex justify-center items-center bg-[#232340] border border-[#2e2e4a] shadow-lg shadow-black/50 text-[#ec4899] transition-colors hover:border-[#ec4899] hover:shadow-[#ec4899]/30 cursor-pointer"
-          onClick={() => commit("pass")}
+          onClick={() => commit("pass", 0, 0)}
         >
           <X size={26} strokeWidth={2.5} />
         </motion.button>
@@ -292,7 +223,7 @@ const SwipeDeck = ({
           whileTap={buttonTap}
           transition={buttonSpring}
           className="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex justify-center items-center bg-[#232340] border border-[#2e2e4a] shadow-lg shadow-black/50 text-[#6ee7a0] transition-colors hover:border-[#6ee7a0] hover:shadow-[#6ee7a0]/30 cursor-pointer"
-          onClick={() => commit("like")}
+          onClick={() => commit("like", 0, 0)}
         >
           <Heart size={26} strokeWidth={2.5} />
         </motion.button>
