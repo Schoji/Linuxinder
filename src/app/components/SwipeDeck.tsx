@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "motion/react";
 import { Heart, Star, X } from "lucide-react";
 
@@ -9,6 +9,7 @@ import { useMotionPresets } from "../hooks/use_motion_presets";
 import { DECK_OFFSET, DECK_SCALE_STEP, ROTATE_DIVISOR } from "../lib/animation";
 import DistroCard from "./DistroCard";
 import SwipeCard from "./SwipeCard";
+import VerdictFloat from "./VerdictFloat";
 import ProgressRail from "./ProgressRail";
 
 type Props = {
@@ -53,6 +54,21 @@ const SwipeDeck = ({
     fromX: number;
     fromGlow: number;
   } | null>(null);
+
+  // One entry per press, not a single flag: pressing twice quickly should
+  // send up two icons rather than restart one.
+  const [floats, setFloats] = useState<{ id: number; kind: "like" | "pass" }[]>(
+    [],
+  );
+  const nextFloatId = useRef(0);
+
+  const float = (kind: "like" | "pass") => {
+    if (reducedMotion) return;
+    setFloats((current) => [...current, { id: nextFloatId.current++, kind }]);
+  };
+
+  const dropFloat = (id: number) =>
+    setFloats((current) => current.filter((f) => f.id !== id));
 
   // fromX and fromGlow come from the card itself, which is the only thing that
   // knows how far it was thrown and how lit its verdict border already was.
@@ -190,16 +206,26 @@ const SwipeDeck = ({
             transition-colors to animate against, so the squish landed in a
             single frame and let go in a single frame. A spring gives the press
             somewhere to travel and something to come back from. */}
+        <span className="relative flex">
+        {floats
+          .filter((f) => f.kind === "pass")
+          .map((f) => (
+            <VerdictFloat key={f.id} kind="pass" onDone={() => dropFloat(f.id)} />
+          ))}
         <motion.button
           aria-label="Pass"
           whileHover={buttonHover}
           whileTap={buttonTap}
           transition={buttonSpring}
           className="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex justify-center items-center bg-[#232340] border border-[#2e2e4a] shadow-lg shadow-black/50 text-[#ec4899] transition-colors hover:border-[#ec4899] hover:shadow-[#ec4899]/30 cursor-pointer"
-          onClick={() => commit("pass", 0, 0)}
+          onClick={() => {
+            float("pass");
+            commit("pass", 0, 0);
+          }}
         >
           <X size={26} strokeWidth={2.5} />
         </motion.button>
+        </span>
 
         {/* Smaller than the two it sits between, the way Tinder's own super
             like is - the size difference is what makes it read as the rare one
@@ -217,16 +243,26 @@ const SwipeDeck = ({
           <Star size={22} strokeWidth={2.5} className="fill-current" />
         </motion.button>
 
+        <span className="relative flex">
+        {floats
+          .filter((f) => f.kind === "like")
+          .map((f) => (
+            <VerdictFloat key={f.id} kind="like" onDone={() => dropFloat(f.id)} />
+          ))}
         <motion.button
           aria-label="Like"
           whileHover={buttonHover}
           whileTap={buttonTap}
           transition={buttonSpring}
           className="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex justify-center items-center bg-[#232340] border border-[#2e2e4a] shadow-lg shadow-black/50 text-[#6ee7a0] transition-colors hover:border-[#6ee7a0] hover:shadow-[#6ee7a0]/30 cursor-pointer"
-          onClick={() => commit("like", 0, 0)}
+          onClick={() => {
+            float("like");
+            commit("like", 0, 0);
+          }}
         >
           <Heart size={26} strokeWidth={2.5} />
         </motion.button>
+        </span>
       </div>
 
       {/* Pass, star, like - the same order as the row above it, so each phrase

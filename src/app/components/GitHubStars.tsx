@@ -70,7 +70,14 @@ const GitHubStars = ({ stars }: { stars: number | null }) => {
       whileHover={reducedMotion ? undefined : { scale: 1.05 }}
       whileTap={reducedMotion ? undefined : { scale: 0.95 }}
       transition={buttonSpring}
-      className="flex items-center gap-2 h-9 pl-3 pr-1 rounded-full border border-[#3a3a5a] bg-[#232340] text-sm font-semibold text-foreground transition-colors hover:border-[#ff7354] cursor-pointer"
+      // will-change-transform is load-bearing, not a perf tweak. Scaling to
+      // 1.05 turns the 1px border into 1.05px, and at 36px tall against ~130px
+      // wide the horizontal and vertical edges land on different subpixel
+      // phases - so the top and bottom rendered a visibly paler orange than
+      // the sides on hover. Promoting the element to its own layer means it is
+      // rasterised once at its natural size and scaled as a texture, so every
+      // edge is treated identically.
+      className="flex items-center gap-2 h-9 pl-3 pr-1 rounded-full border border-[#3a3a5a] bg-[#232340] text-sm font-semibold text-foreground transition-colors hover:border-[#ff7354] cursor-pointer will-change-transform"
     >
       <GitHubMark />
       <span className="hidden sm:inline">Star</span>
