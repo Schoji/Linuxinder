@@ -6,7 +6,12 @@ import { Heart, Star, X } from "lucide-react";
 
 import { Distro } from "../data/models/distro";
 import { useMotionPresets } from "../hooks/use_motion_presets";
-import { DECK_OFFSET, DECK_SCALE_STEP, ROTATE_DIVISOR } from "../lib/animation";
+import {
+  DECK_DIM_STEP,
+  DECK_OFFSET,
+  DECK_SCALE_STEP,
+  ROTATE_DIVISOR,
+} from "../lib/animation";
 import DistroCard from "./DistroCard";
 import SwipeCard from "./SwipeCard";
 import VerdictFloat from "./VerdictFloat";
@@ -129,9 +134,7 @@ const SwipeDeck = ({
                 y: Math.min(depth, 1) * DECK_OFFSET,
                 scale: 1 - depth * DECK_SCALE_STEP,
               }}
-              // Enough to sit it behind, not so much that it goes black and the
-              // stack reads as a shadow.
-              style={{ filter: `brightness(${1 - depth * 0.18})` }}
+              style={{ filter: `brightness(${1 - depth * DECK_DIM_STEP})` }}
               transition={spring}
             >
               <DistroCard distro={upcomingDistro} small={false} />
