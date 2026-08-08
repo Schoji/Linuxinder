@@ -134,7 +134,7 @@ const SwipeDeck = ({
                 y: Math.min(depth, 1) * DECK_OFFSET,
                 scale: 1 - depth * DECK_SCALE_STEP,
               }}
-              style={{ filter: `brightness(${1 - depth * DECK_DIM_STEP})` }}
+              style={{ filter: `brightness(${1 - (depth - 1) * DECK_DIM_STEP})` }}
               transition={spring}
             >
               <DistroCard distro={upcomingDistro} small={false} />
