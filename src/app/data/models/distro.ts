@@ -9,8 +9,6 @@ export type Distro = {
     release_date: Date,
     originCountry: string,
     basedOn: string,
-
-    logo_path: string,
     screenshot_path: string,
     website: string,
 

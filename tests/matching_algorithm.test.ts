@@ -14,7 +14,6 @@ const make = (slug: string, tags: Tag[]): Distro => ({
   release_date: new Date("2020-01-01"),
   originCountry: "",
   basedOn: "",
-  logo_path: "",
   screenshot_path: "",
   website: "",
   tags,

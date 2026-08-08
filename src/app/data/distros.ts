@@ -11,7 +11,6 @@ export const distros: Distro[] = [
     release_date: new Date("2021-07-01"), // first images, July 2021 (exact day undocumented)
     originCountry: "Germany",
     basedOn: "Arch",
-    logo_path: "/logos/cachyos.png",
     screenshot_path: "/screenshots/cachyos.webp",
     website: "https://cachyos.org",
     tags: [Tag.Rolling, Tag.Gaming, Tag.Ricing],
@@ -26,7 +25,6 @@ export const distros: Distro[] = [
     release_date: new Date("2006-08-27"), // 1.0 "Ada"
     originCountry: "Ireland",
     basedOn: "Debian (Stable), Ubuntu (LTS)",
-    logo_path: "/logos/mint.png",
     screenshot_path: "/screenshots/mint.webp",
     website: "https://linuxmint.com",
     tags: [Tag.Stable, Tag.Beginner, Tag.Polished],
@@ -41,7 +39,6 @@ export const distros: Distro[] = [
     release_date: new Date("2014-03-24"), // MX-14
     originCountry: "Greece, USA",
     basedOn: "Debian (Stable), antiX",
-    logo_path: "/logos/mx.png",
     screenshot_path: "/screenshots/mx.webp",
     website: "https://mxlinux.org",
     tags: [Tag.Stable, Tag.Lightweight, Tag.Beginner],
@@ -56,7 +53,6 @@ export const distros: Distro[] = [
     release_date: new Date("2017-10-27"), // 17.10
     originCountry: "USA",
     basedOn: "Debian, Ubuntu (LTS)",
-    logo_path: "/logos/popos.png",
     screenshot_path: "/screenshots/popos.webp",
     website: "https://pop.system76.com",
     tags: [Tag.Stable, Tag.Gaming, Tag.Polished],
@@ -71,7 +67,6 @@ export const distros: Distro[] = [
     release_date: new Date("1993-09-15"), // 0.01
     originCountry: "Global",
     basedOn: "Independent",
-    logo_path: "/logos/debian.png",
     screenshot_path: "/screenshots/debian.webp",
     website: "https://www.debian.org",
     tags: [Tag.Stable, Tag.Server, Tag.Diy],
@@ -86,7 +81,6 @@ export const distros: Distro[] = [
     release_date: new Date("2009-07-01"), // 1.0
     originCountry: "Ireland",
     basedOn: "Debian, Ubuntu (LTS)",
-    logo_path: "/logos/zorin.png",
     screenshot_path: "/screenshots/zorin.webp",
     website: "https://zorin.com",
     tags: [Tag.Stable, Tag.Beginner, Tag.WindowsLike],
@@ -101,7 +95,6 @@ export const distros: Distro[] = [
     release_date: new Date("2003-11-06"), // Fedora Core 1
     originCountry: "USA",
     basedOn: "Independent",
-    logo_path: "/logos/fedora.png",
     screenshot_path: "/screenshots/fedora.webp",
     website: "https://fedoraproject.org",
     tags: [Tag.Corporate, Tag.Polished, Tag.Server],
@@ -116,7 +109,6 @@ export const distros: Distro[] = [
     release_date: new Date("2004-10-20"), // 4.10 "Warty Warthog"
     originCountry: "Isle of Man",
     basedOn: "Debian",
-    logo_path: "/logos/ubuntu.png",
     screenshot_path: "/screenshots/ubuntu.webp",
     website: "https://ubuntu.com",
     tags: [Tag.Stable, Tag.Beginner, Tag.Corporate],
@@ -131,7 +123,6 @@ export const distros: Distro[] = [
     release_date: new Date("2019-07-15"), // 19.6
     originCountry: "Netherlands",
     basedOn: "Arch",
-    logo_path: "/logos/endeavour.png",
     screenshot_path: "/screenshots/endeavour.webp",
     website: "https://endeavouros.com",
     tags: [Tag.Rolling, Tag.Diy, Tag.Ricing],
@@ -146,7 +137,6 @@ export const distros: Distro[] = [
     release_date: new Date("2023-11-01"), // 1.0, November 2023 (exact day undocumented)
     originCountry: "Global",
     basedOn: "Fedora",
-    logo_path: "/logos/bazzite.png",
     screenshot_path: "/screenshots/bazzite.webp",
     website: "https://bazzite.gg",
     tags: [Tag.Immutable, Tag.Gaming, Tag.Polished],
@@ -161,7 +151,6 @@ export const distros: Distro[] = [
     release_date: new Date("2011-07-10"), // first 0.1 release, July 2011
     originCountry: "Austria, France, Germany",
     basedOn: "Arch",
-    logo_path: "/logos/manjaro.png",
     screenshot_path: "/screenshots/manjaro.webp",
     website: "https://manjaro.org",
     tags: [Tag.Rolling, Tag.Beginner, Tag.Ricing],
@@ -177,7 +166,6 @@ export const distros: Distro[] = [
     release_date: new Date("2002-03-11"), // 0.1 "Homer"
     originCountry: "Canada",
     basedOn: "Independent",
-    logo_path: "/logos/arch.png",
     screenshot_path: "/screenshots/arch.webp",
     website: "https://archlinux.org",
     tags: [Tag.Rolling, Tag.Diy, Tag.Terminal],
@@ -193,7 +181,6 @@ export const distros: Distro[] = [
     release_date: new Date("2024-09-01"), // first public releases, 2024 (exact day undocumented)
     originCountry: "Hong Kong",
     basedOn: "Debian, Ubuntu",
-    logo_path: "/logos/anduinos.png",
     screenshot_path: "/screenshots/anduinos.webp",
     website: "https://anduinos.com",
     tags: [Tag.Stable, Tag.Beginner, Tag.WindowsLike],
@@ -209,7 +196,6 @@ export const distros: Distro[] = [
     release_date: new Date("2023-05-01"), // first public release, 2023 (exact day undocumented)
     originCountry: "United Kingdom",
     basedOn: "Debian (Unstable)",
-    logo_path: "/logos/pikaos.png",
     screenshot_path: "/screenshots/pikaos.webp",
     website: "https://pika-os.com",
     tags: [Tag.Gaming, Tag.Polished, Tag.WillBreak],
@@ -225,7 +211,6 @@ export const distros: Distro[] = [
     release_date: new Date("2005-10-06"), // openSUSE 10.0
     originCountry: "Germany",
     basedOn: "Independent",
-    logo_path: "/logos/opensuse.png",
     screenshot_path: "/screenshots/opensuse.webp",
     website: "https://www.opensuse.org",
     tags: [Tag.Rolling, Tag.Diy, Tag.Corporate],
@@ -241,7 +226,6 @@ export const distros: Distro[] = [
     release_date: new Date("2004-11-16"), // earliest surviving release screenshot
     originCountry: "Brazil",
     basedOn: "Arch, Manjaro",
-    logo_path: "/logos/biglinux.png",
     screenshot_path: "/screenshots/biglinux.webp",
     website: "https://www.biglinux.com.br",
     tags: [Tag.Rolling, Tag.Beginner, Tag.Polished],
@@ -257,7 +241,6 @@ export const distros: Distro[] = [
     release_date: new Date("2022-07-10"), // first public Nobara releases, 2022 (exact day undocumented)
     originCountry: "USA",
     basedOn: "Fedora",
-    logo_path: "/logos/nobara.png",
     screenshot_path: "/screenshots/nobara.webp",
     website: "https://nobaraproject.org",
     tags: [Tag.Gaming, Tag.Polished, Tag.Beginner],
@@ -273,7 +256,6 @@ export const distros: Distro[] = [
     release_date: new Date("2007-07-09"), // first antiX releases, 2007 (exact day undocumented)
     originCountry: "Greece",
     basedOn: "Debian (Stable)",
-    logo_path: "/logos/antix.png",
     screenshot_path: "/screenshots/antix.webp",
     website: "https://antixlinux.com",
     tags: [Tag.Stable, Tag.Lightweight, Tag.SystemdFree, Tag.LiveUsb],
@@ -289,7 +271,6 @@ export const distros: Distro[] = [
     release_date: new Date("2008-01-01"), // project began in 2008 (exact day undocumented)
     originCountry: "Spain",
     basedOn: "Independent",
-    logo_path: "/logos/void.png",
     screenshot_path: "/screenshots/void.webp",
     website: "https://voidlinux.org",
     tags: [Tag.Rolling, Tag.SystemdFree, Tag.Diy],
@@ -305,7 +286,6 @@ export const distros: Distro[] = [
     release_date: new Date("2003-01-01"), // research project began in 2003 (exact day undocumented)
     originCountry: "Netherlands",
     basedOn: "Independent",
-    logo_path: "/logos/nixos.png",
     screenshot_path: "/screenshots/nixos.webp",
     website: "https://nixos.org",
     tags: [Tag.Diy, Tag.Terminal, Tag.Server],
@@ -321,7 +301,6 @@ export const distros: Distro[] = [
     release_date: new Date("2025-06-01"), // first public release, June 2025 (exact day undocumented)
     originCountry: "Denmark",
     basedOn: "Arch",
-    logo_path: "/logos/omarchy.png",
     screenshot_path: "/screenshots/omarchy.webp",
     website: "https://omarchy.org",
     tags: [Tag.Rolling, Tag.Ricing, Tag.Terminal],
@@ -337,7 +316,6 @@ export const distros: Distro[] = [
     release_date: new Date("2017-09-01"), // split from Arch-OpenRC, 2017 (exact day undocumented)
     originCountry: "Global",
     basedOn: "Arch",
-    logo_path: "/logos/artix.png",
     screenshot_path: "/screenshots/artix.webp",
     website: "https://artixlinux.org",
     tags: [Tag.Rolling, Tag.SystemdFree, Tag.Diy],
@@ -353,7 +331,6 @@ export const distros: Distro[] = [
     release_date: new Date("2011-03-31"), // 0.1 "Jupiter"
     originCountry: "USA",
     basedOn: "Debian, Ubuntu (LTS)",
-    logo_path: "/logos/elementary.png",
     screenshot_path: "/screenshots/elementary.webp",
     website: "https://elementary.io",
     tags: [Tag.Beginner, Tag.Polished, Tag.MacLike],
@@ -369,7 +346,6 @@ export const distros: Distro[] = [
     release_date: new Date("2014-04-01"), // first public releases, 2014 (exact day undocumented)
     originCountry: "Czechia",
     basedOn: "Debian (Stable)",
-    logo_path: "/logos/q4os.png",
     screenshot_path: "/screenshots/q4os.webp",
     website: "https://q4os.org",
     tags: [Tag.Stable, Tag.Lightweight, Tag.WindowsLike],
@@ -385,7 +361,6 @@ export const distros: Distro[] = [
     release_date: new Date("2021-08-01"), // first public releases, 2021 (exact day undocumented)
     originCountry: "Romania",
     basedOn: "Arch",
-    logo_path: "/logos/pearos.png",
     screenshot_path: "/screenshots/pearos.webp",
     website: "https://pearos.xyz",
     tags: [Tag.Rolling, Tag.MacLike, Tag.Polished],
@@ -401,7 +376,6 @@ export const distros: Distro[] = [
     release_date: new Date("2011-06-01"), // Mageia 1
     originCountry: "France",
     basedOn: "Independent",
-    logo_path: "/logos/mageia.png",
     screenshot_path: "/screenshots/mageia.webp",
     website: "https://www.mageia.org",
     tags: [Tag.Stable, Tag.Beginner, Tag.Polished],
@@ -417,7 +391,6 @@ export const distros: Distro[] = [
     release_date: new Date("2016-06-08"), // first images announced, June 2016
     originCountry: "United Kingdom",
     basedOn: "Debian, Ubuntu (LTS)",
-    logo_path: "/logos/neon.png",
     screenshot_path: "/screenshots/neon.webp",
     website: "https://neon.kde.org",
     tags: [Tag.Stable, Tag.Polished, Tag.WillBreak],
@@ -433,7 +406,6 @@ export const distros: Distro[] = [
     release_date: new Date("2023-01-01"), // first widely-listed releases, 2023 (exact day undocumented)
     originCountry: "Russia",
     basedOn: "Debian (Stable)",
-    logo_path: "/logos/minios.png",
     screenshot_path: "/screenshots/minios.webp",
     website: "https://minios.dev",
     tags: [Tag.Lightweight, Tag.LiveUsb, Tag.Stable],
@@ -449,7 +421,6 @@ export const distros: Distro[] = [
     release_date: new Date("2025-03-01"), // renamed from Serpent OS, March 2025
     originCountry: "Ireland",
     basedOn: "Independent",
-    logo_path: "/logos/aerynos.png",
     screenshot_path: "/screenshots/aerynos.webp",
     website: "https://aerynos.com",
     tags: [Tag.Rolling, Tag.Diy, Tag.Obscure],
@@ -465,7 +436,6 @@ export const distros: Distro[] = [
     release_date: new Date("2003-10-01"), // first previews, October 2003 (exact day undocumented)
     originCountry: "USA",
     basedOn: "Independent",
-    logo_path: "/logos/pclinuxos.png",
     screenshot_path: "/screenshots/pclinuxos.webp",
     website: "https://www.pclinuxos.com",
     tags: [Tag.Rolling, Tag.Beginner, Tag.SystemdFree],
@@ -481,7 +451,6 @@ export const distros: Distro[] = [
     release_date: new Date("2013-03-13"), // Kali 1.0
     originCountry: "Gibraltar",
     basedOn: "Debian (Testing)",
-    logo_path: "/logos/kali.png",
     screenshot_path: "/screenshots/kali.webp",
     website: "https://www.kali.org",
     tags: [Tag.SecurityTools, Tag.LiveUsb, Tag.Rolling],
@@ -497,7 +466,6 @@ export const distros: Distro[] = [
     release_date: new Date("2005-08-01"), // forked from LEAF, 2005 (exact day undocumented)
     originCountry: "Norway",
     basedOn: "Independent",
-    logo_path: "/logos/alpine.png",
     screenshot_path: "/screenshots/alpine.webp",
     website: "https://alpinelinux.org",
     tags: [Tag.Lightweight, Tag.Server, Tag.Diy],
@@ -513,7 +481,6 @@ export const distros: Distro[] = [
     release_date: new Date("2012-10-01"), // 1.0.0, October 2012 (exact day undocumented)
     originCountry: "New Zealand",
     basedOn: "Debian, Ubuntu (LTS)",
-    logo_path: "/logos/lite.png",
     screenshot_path: "/screenshots/lite.webp",
     website: "https://www.linuxliteos.com",
     tags: [Tag.Stable, Tag.Beginner, Tag.Lightweight],
@@ -529,7 +496,6 @@ export const distros: Distro[] = [
     release_date: new Date("2014-01-01"), // first public releases, 2014 (exact day undocumented)
     originCountry: "Germany",
     basedOn: "Arch",
-    logo_path: "/logos/bluestar.png",
     screenshot_path: "/screenshots/bluestar.webp",
     website: "https://sourceforge.net/projects/bluestarlinux/",
     tags: [Tag.Rolling, Tag.Polished, Tag.Ricing],
@@ -545,7 +511,6 @@ export const distros: Distro[] = [
     release_date: new Date("2003-06-01"), // first releases by Barry Kauler, June 2003 (exact day undocumented)
     originCountry: "Australia",
     basedOn: "Independent",
-    logo_path: "/logos/puppy.png",
     screenshot_path: "/screenshots/puppy.webp",
     website: "https://puppylinux.com",
     tags: [Tag.Lightweight, Tag.LiveUsb, Tag.Obscure],
@@ -561,7 +526,6 @@ export const distros: Distro[] = [
     release_date: new Date("2020-03-26"), // first public release, March 2020
     originCountry: "Germany",
     basedOn: "Arch",
-    logo_path: "/logos/garuda.png",
     screenshot_path: "/screenshots/garuda.webp",
     website: "https://garudalinux.org",
     tags: [Tag.Rolling, Tag.Gaming, Tag.Ricing],
@@ -577,7 +541,6 @@ export const distros: Distro[] = [
     release_date: new Date("2024-01-01"), // first public releases, 2024 (exact day undocumented)
     originCountry: "China",
     basedOn: "Independent",
-    logo_path: "/logos/zimaos.png",
     screenshot_path: "/screenshots/zimaos.webp",
     website: "https://www.zimaspace.com",
     tags: [Tag.Server, Tag.Beginner, Tag.Polished],
@@ -593,7 +556,6 @@ export const distros: Distro[] = [
     release_date: new Date("2009-06-23"), // first release as amnesia/Incognito, June 2009
     originCountry: "Ireland",
     basedOn: "Debian (Stable)",
-    logo_path: "/logos/tails.png",
     screenshot_path: "/screenshots/tails.webp",
     website: "https://tails.net",
     tags: [Tag.Privacy, Tag.LiveUsb, Tag.SecurityTools],
@@ -609,7 +571,6 @@ export const distros: Distro[] = [
     release_date: new Date("2011-12-01"), // first public releases, late 2011 (exact day undocumented)
     originCountry: "Poland",
     basedOn: "Debian (Stable), Debian (Testing)",
-    logo_path: "/logos/sparkylinux.png",
     screenshot_path: "/screenshots/sparkylinux.webp",
     website: "https://sparkylinux.org",
     tags: [Tag.Lightweight, Tag.Stable, Tag.Diy],
@@ -625,7 +586,6 @@ export const distros: Distro[] = [
     release_date: new Date("2022-03-01"), // TUXEDO OS 1, March 2022 (exact day undocumented)
     originCountry: "Germany",
     basedOn: "Debian, Ubuntu (LTS)",
-    logo_path: "/logos/tuxedo.png",
     screenshot_path: "/screenshots/tuxedo.webp",
     website: "https://www.tuxedocomputers.com",
     tags: [Tag.Stable, Tag.Polished, Tag.Corporate],
@@ -641,7 +601,6 @@ export const distros: Distro[] = [
     release_date: new Date("2017-05-25"), // Devuan 1.0 "Jessie"
     originCountry: "Global",
     basedOn: "Debian",
-    logo_path: "/logos/devuan.png",
     screenshot_path: "/screenshots/devuan.webp",
     website: "https://www.devuan.org",
     tags: [Tag.Stable, Tag.SystemdFree, Tag.Server],
@@ -657,7 +616,6 @@ export const distros: Distro[] = [
     release_date: new Date("2024-01-01"), // first public releases, 2024 (exact day undocumented)
     originCountry: "Poland",
     basedOn: "Debian (Testing)",
-    logo_path: "/logos/hackeros.png",
     screenshot_path: "/screenshots/hackeros.webp",
     website: "https://hackeros.org",
     tags: [Tag.Gaming, Tag.SecurityTools, Tag.WillBreak],
@@ -673,7 +631,6 @@ export const distros: Distro[] = [
     release_date: new Date("2015-12-27"), // Solus 1.0
     originCountry: "Ireland",
     basedOn: "Independent",
-    logo_path: "/logos/solus.png",
     screenshot_path: "/screenshots/solus.webp",
     website: "https://getsol.us",
     tags: [Tag.Rolling, Tag.Beginner, Tag.Polished],
@@ -689,7 +646,6 @@ export const distros: Distro[] = [
     release_date: new Date("2025-07-01"), // first public alpha images, July 2025 (exact day undocumented)
     originCountry: "Global",
     basedOn: "Independent",
-    logo_path: "/logos/kdelinux.png",
     screenshot_path: "/screenshots/kdelinux.webp",
     website: "https://kde.org/linux/",
     tags: [Tag.Immutable, Tag.Polished, Tag.WillBreak],
@@ -705,7 +661,6 @@ export const distros: Distro[] = [
     release_date: new Date("2005-04-08"), // Kubuntu 5.04
     originCountry: "Isle of Man",
     basedOn: "Debian, Ubuntu",
-    logo_path: "/logos/kubuntu.png",
     screenshot_path: "/screenshots/kubuntu.webp",
     website: "https://kubuntu.org",
     tags: [Tag.Stable, Tag.Beginner, Tag.Polished],
@@ -721,7 +676,6 @@ export const distros: Distro[] = [
     release_date: new Date("2016-11-01"), // launched as Flint OS, late 2016 (exact day undocumented)
     originCountry: "United Kingdom",
     basedOn: "Gentoo, ChromeOS",
-    logo_path: "/logos/fydeos.png",
     screenshot_path: "/screenshots/fydeos.webp",
     website: "https://fydeos.io",
     tags: [Tag.Beginner, Tag.Lightweight, Tag.Corporate],
@@ -737,7 +691,6 @@ export const distros: Distro[] = [
     release_date: new Date("2013-06-01"), // first public releases, 2013 (exact day undocumented)
     originCountry: "Italy",
     basedOn: "Debian (Stable)",
-    logo_path: "/logos/parrot.png",
     screenshot_path: "/screenshots/parrot.webp",
     website: "https://www.parrotsec.org",
     tags: [Tag.SecurityTools, Tag.Privacy, Tag.Stable],
@@ -753,7 +706,6 @@ export const distros: Distro[] = [
     release_date: new Date("2004-05-14"), // CentOS 2
     originCountry: "USA",
     basedOn: "Fedora, Red Hat",
-    logo_path: "/logos/centos.png",
     screenshot_path: "/screenshots/centos.webp",
     website: "https://www.centos.org",
     tags: [Tag.Server, Tag.Corporate, Tag.Stable],
@@ -769,7 +721,6 @@ export const distros: Distro[] = [
     release_date: new Date("2020-04-01"), // the Windows-lookalike editions arrive, 2020 (exact day undocumented)
     originCountry: "Brazil",
     basedOn: "Ubuntu (LTS)",
-    logo_path: "/logos/linuxfx.png",
     screenshot_path: "/screenshots/linuxfx.webp",
     website: "https://www.linuxfx.org",
     tags: [Tag.Beginner, Tag.WindowsLike, Tag.Corporate],
@@ -785,7 +736,6 @@ export const distros: Distro[] = [
     release_date: new Date("2019-01-01"), // regular nightly images, 2019 (exact day undocumented)
     originCountry: "Global",
     basedOn: "Independent",
-    logo_path: "/logos/gnomeos.png",
     screenshot_path: "/screenshots/gnomeos.webp",
     website: "https://os.gnome.org",
     tags: [Tag.Immutable, Tag.WillBreak, Tag.Obscure],
@@ -801,7 +751,6 @@ export const distros: Distro[] = [
     release_date: new Date("2013-06-01"), // first public releases, 2013 (exact day undocumented)
     originCountry: "Netherlands",
     basedOn: "Independent",
-    logo_path: "/logos/kaos.png",
     screenshot_path: "/screenshots/kaos.webp",
     website: "https://kaosx.us",
     tags: [Tag.Rolling, Tag.Obscure, Tag.Polished],
@@ -817,7 +766,6 @@ export const distros: Distro[] = [
     release_date: new Date("2021-03-30"), // AlmaLinux 8.3 stable
     originCountry: "USA",
     basedOn: "Fedora, Red Hat",
-    logo_path: "/logos/almalinux.png",
     screenshot_path: "/screenshots/almalinux.webp",
     website: "https://almalinux.org",
     tags: [Tag.Server, Tag.Stable, Tag.Corporate],
@@ -833,7 +781,6 @@ export const distros: Distro[] = [
     release_date: new Date("2010-01-01"), // long-running series of respins, from around 2010 (exact day undocumented)
     originCountry: "Sweden",
     basedOn: "Arch, CRUX, Debian, deepin, Fedora, Gentoo, openSUSE, Puppy, Slackware",
-    logo_path: "/logos/exton.png",
     screenshot_path: "/screenshots/exton.webp",
     website: "https://exton.net",
     tags: [Tag.LiveUsb, Tag.Obscure, Tag.Diy],
@@ -849,7 +796,6 @@ export const distros: Distro[] = [
     release_date: new Date("2010-01-01"), // first public releases, around 2010 (exact day undocumented)
     originCountry: "France",
     basedOn: "Debian, Xubuntu",
-    logo_path: "/logos/voyager.png",
     screenshot_path: "/screenshots/voyager.webp",
     website: "https://voyagerlive.org",
     tags: [Tag.Polished, Tag.Beginner, Tag.Ricing],
@@ -865,7 +811,6 @@ export const distros: Distro[] = [
     release_date: new Date("2002-03-31"), // Gentoo 1.0
     originCountry: "USA",
     basedOn: "Independent",
-    logo_path: "/logos/gentoo.png",
     screenshot_path: "/screenshots/gentoo.webp",
     website: "https://www.gentoo.org",
     tags: [Tag.Rolling, Tag.Diy, Tag.Terminal],
@@ -881,7 +826,6 @@ export const distros: Distro[] = [
     release_date: new Date("2020-01-01"), // first releases after the Sabayon lineage, 2020 (exact day undocumented)
     originCountry: "Italy",
     basedOn: "Independent",
-    logo_path: "/logos/mocaccino.png",
     screenshot_path: "/screenshots/mocaccino.webp",
     website: "https://www.mocaccino.org",
     tags: [Tag.Immutable, Tag.Obscure, Tag.Server],
@@ -897,7 +841,6 @@ export const distros: Distro[] = [
     release_date: new Date("2017-02-01"), // Easy 0.1, February 2017 (exact day undocumented)
     originCountry: "Australia",
     basedOn: "Independent",
-    logo_path: "/logos/easyos.png",
     screenshot_path: "/screenshots/easyos.webp",
     website: "https://easyos.org",
     tags: [Tag.Lightweight, Tag.Obscure, Tag.LiveUsb],
@@ -913,7 +856,6 @@ export const distros: Distro[] = [
     release_date: new Date("2023-01-01"), // first public releases as a Lubuntu remix, 2023 (exact day undocumented)
     originCountry: "Chile",
     basedOn: "Arch, Debian, Ubuntu (LTS)",
-    logo_path: "/logos/omegalinux.png",
     screenshot_path: "/screenshots/omegalinux.webp",
     website: "https://omegalinux.org",
     tags: [Tag.Rolling, Tag.Lightweight, Tag.Obscure],
@@ -929,7 +871,6 @@ export const distros: Distro[] = [
     release_date: new Date("1993-07-17"), // Slackware 1.0
     originCountry: "USA",
     basedOn: "Independent",
-    logo_path: "/logos/slackware.png",
     screenshot_path: "/screenshots/slackware.webp",
     website: "http://www.slackware.com",
     tags: [Tag.Stable, Tag.Diy, Tag.Terminal],
@@ -945,7 +886,6 @@ export const distros: Distro[] = [
     release_date: new Date("2018-10-30"), // named Silverblue with Fedora 29
     originCountry: "USA",
     basedOn: "Fedora",
-    logo_path: "/logos/silverblue.png",
     screenshot_path: "/screenshots/silverblue.webp",
     website: "https://fedoraproject.org/atomic-desktops/silverblue/",
     tags: [Tag.Immutable, Tag.Polished, Tag.Corporate],
@@ -961,7 +901,6 @@ export const distros: Distro[] = [
     release_date: new Date("2013-12-13"), // SteamOS 1.0 beta
     originCountry: "USA",
     basedOn: "Arch",
-    logo_path: "/logos/steamos.png",
     screenshot_path: "/screenshots/steamos.webp",
     website: "https://store.steampowered.com/steamos",
     tags: [Tag.Immutable, Tag.Gaming, Tag.Polished],
@@ -977,7 +916,6 @@ export const distros: Distro[] = [
     release_date: new Date("2022-03-18"), // first public alpha
     originCountry: "Global",
     basedOn: "Fedora",
-    logo_path: "/logos/asahi.png",
     screenshot_path: "/screenshots/asahi.webp",
     website: "https://asahilinux.org",
     tags: [Tag.Polished, Tag.Diy, Tag.Arm],
@@ -993,7 +931,6 @@ export const distros: Distro[] = [
     release_date: new Date("2023-01-01"), // project began, 2023 (exact day undocumented)
     originCountry: "USA",
     basedOn: "Fedora",
-    logo_path: "/logos/secureblue.png",
     screenshot_path: "/screenshots/secureblue.webp",
     website: "https://secureblue.dev",
     tags: [Tag.Immutable, Tag.SecurityTools, Tag.Privacy],
@@ -1009,7 +946,6 @@ export const distros: Distro[] = [
     release_date: new Date("2012-09-03"), // Qubes OS 1.0
     originCountry: "Poland",
     basedOn: "Debian, Fedora",
-    logo_path: "/logos/qubes.png",
     screenshot_path: "/screenshots/qubes.webp",
     website: "https://www.qubes-os.org",
     tags: [Tag.Privacy, Tag.SecurityTools, Tag.Diy],
@@ -1025,7 +961,6 @@ export const distros: Distro[] = [
     release_date: new Date("2012-01-01"), // project began as TorBOX, 2012 (exact day undocumented)
     originCountry: "Canada",
     basedOn: "Debian (Stable)",
-    logo_path: "/logos/whonix.png",
     screenshot_path: "/screenshots/whonix.webp",
     website: "https://www.whonix.org",
     tags: [Tag.Privacy, Tag.SecurityTools, Tag.Stable],
@@ -1041,7 +976,6 @@ export const distros: Distro[] = [
     release_date: new Date("2005-01-01"), // project began, 2005 (exact day undocumented)
     originCountry: "Spain",
     basedOn: "Debian, Ubuntu",
-    logo_path: "/logos/trisquel.png",
     screenshot_path: "/screenshots/trisquel.webp",
     website: "https://trisquel.info",
     tags: [Tag.Libre, Tag.Stable, Tag.Beginner],
@@ -1057,7 +991,6 @@ export const distros: Distro[] = [
     release_date: new Date("2009-01-01"), // project began, 2009 (exact day undocumented)
     originCountry: "Chile",
     basedOn: "Arch",
-    logo_path: "/logos/parabola.png",
     screenshot_path: "/screenshots/parabola.webp",
     website: "https://www.parabola.nu",
     tags: [Tag.Libre, Tag.Rolling, Tag.Obscure],
@@ -1073,7 +1006,6 @@ export const distros: Distro[] = [
     release_date: new Date("2015-01-01"), // first releases from Purism, 2015 (exact day undocumented)
     originCountry: "France",
     basedOn: "Debian (Stable)",
-    logo_path: "/logos/pureos.png",
     screenshot_path: "/screenshots/pureos.webp",
     website: "https://pureos.net",
     tags: [Tag.Libre, Tag.Privacy, Tag.Stable],
@@ -1089,7 +1021,6 @@ export const distros: Distro[] = [
     release_date: new Date("2013-01-01"), // first public images, 2013 (exact day undocumented)
     originCountry: "USA",
     basedOn: "Arch",
-    logo_path: "/logos/blackarch.png",
     screenshot_path: "/screenshots/blackarch.webp",
     website: "https://blackarch.org",
     tags: [Tag.SecurityTools, Tag.Rolling, Tag.Obscure],
@@ -1105,7 +1036,6 @@ export const distros: Distro[] = [
     release_date: new Date("2013-01-01"), // first public releases, 2013 (exact day undocumented)
     originCountry: "Oman",
     basedOn: "Debian (Stable)",
-    logo_path: "/logos/kodachi.png",
     screenshot_path: "/screenshots/kodachi.webp",
     website: "https://www.digi77.com/linux-kodachi/",
     tags: [Tag.Privacy, Tag.SecurityTools, Tag.LiveUsb],
@@ -1121,7 +1051,6 @@ export const distros: Distro[] = [
     release_date: new Date("2009-01-15"), // Tiny Core 1.0, January 2009
     originCountry: "USA",
     basedOn: "Independent (forked from Damn Small)",
-    logo_path: "/logos/tinycore.png",
     screenshot_path: "/screenshots/tinycore.webp",
     website: "http://tinycorelinux.net",
     tags: [Tag.Lightweight, Tag.LiveUsb, Tag.Diy],
@@ -1137,7 +1066,6 @@ export const distros: Distro[] = [
     release_date: new Date("2003-01-01"), // original releases, 2003; relaunched 2024 (exact day undocumented)
     originCountry: "USA",
     basedOn: "Debian, antiX",
-    logo_path: "/logos/dsl.png",
     screenshot_path: "/screenshots/dsl.webp",
     website: "https://www.damnsmalllinux.org",
     tags: [Tag.Lightweight, Tag.LiveUsb, Tag.Obscure],
@@ -1153,7 +1081,6 @@ export const distros: Distro[] = [
     release_date: new Date("2011-03-26"), // Bodhi Linux 1.0
     originCountry: "USA",
     basedOn: "Debian, Ubuntu",
-    logo_path: "/logos/bodhi.png",
     screenshot_path: "/screenshots/bodhi.webp",
     website: "https://www.bodhilinux.com",
     tags: [Tag.Lightweight, Tag.Ricing, Tag.Beginner],
@@ -1169,7 +1096,6 @@ export const distros: Distro[] = [
     release_date: new Date("2012-06-01"), // initial Raspbian build completed, June 2012
     originCountry: "United Kingdom",
     basedOn: "Debian (Stable)",
-    logo_path: "/logos/raspios.png",
     screenshot_path: "/screenshots/raspios.webp",
     website: "https://www.raspberrypi.com/software/",
     tags: [Tag.Beginner, Tag.Arm, Tag.Stable],
@@ -1185,7 +1111,6 @@ export const distros: Distro[] = [
     release_date: new Date("2017-05-26"), // project announced, May 2017
     originCountry: "Netherlands",
     basedOn: "Alpine",
-    logo_path: "/logos/postmarketos.png",
     screenshot_path: "/screenshots/postmarketos.webp",
     website: "https://postmarketos.org",
     tags: [Tag.Lightweight, Tag.Arm, Tag.Obscure],
@@ -1201,7 +1126,6 @@ export const distros: Distro[] = [
     release_date: new Date("2016-04-01"), // forked from OpenELEC, spring 2016 (exact day undocumented)
     originCountry: "USA",
     basedOn: "Independent (forked from OpenELEC)",
-    logo_path: "/logos/libreelec.png",
     screenshot_path: "/screenshots/libreelec.webp",
     website: "https://libreelec.tv",
     tags: [Tag.Lightweight, Tag.Immutable, Tag.Polished],
@@ -1217,7 +1141,6 @@ export const distros: Distro[] = [
     release_date: new Date("2008-04-15"), // Proxmox VE 0.9
     originCountry: "Austria",
     basedOn: "Debian (Stable)",
-    logo_path: "/logos/proxmox.png",
     screenshot_path: "/screenshots/proxmox.webp",
     website: "https://www.proxmox.com",
     tags: [Tag.Server, Tag.Stable, Tag.Corporate],
@@ -1233,7 +1156,6 @@ export const distros: Distro[] = [
     release_date: new Date("2005-10-01"), // as FreeNAS, 2005; the Debian-based SCALE branch arrived 2022
     originCountry: "France, USA",
     basedOn: "Debian (Stable)",
-    logo_path: "/logos/truenas.png",
     screenshot_path: "/screenshots/truenas.webp",
     website: "https://www.truenas.com",
     tags: [Tag.Server, Tag.Stable, Tag.Corporate],
@@ -1249,7 +1171,6 @@ export const distros: Distro[] = [
     release_date: new Date("2021-06-01"), // project began, mid-2021 (exact day undocumented)
     originCountry: "Spain",
     basedOn: "Independent",
-    logo_path: "/logos/chimera.png",
     screenshot_path: "/screenshots/chimera.webp",
     website: "https://chimera-linux.org",
     tags: [Tag.Rolling, Tag.Diy, Tag.Obscure],
@@ -1265,7 +1186,6 @@ export const distros: Distro[] = [
     release_date: new Date("2002-03-26"), // Red Hat Enterprise Linux 2.1
     originCountry: "USA",
     basedOn: "Fedora",
-    logo_path: "/logos/rhel.png",
     screenshot_path: "/screenshots/rhel.webp",
     website: "https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux",
     tags: [Tag.Server, Tag.Corporate, Tag.Stable],
@@ -1281,7 +1201,6 @@ export const distros: Distro[] = [
     release_date: new Date("2006-10-25"), // announced as Unbreakable Linux, October 2006
     originCountry: "USA",
     basedOn: "Red Hat",
-    logo_path: "/logos/oracle.png",
     screenshot_path: "/screenshots/oracle.webp",
     website: "https://www.oracle.com/linux/",
     tags: [Tag.Server, Tag.Corporate, Tag.Stable],
@@ -1297,7 +1216,6 @@ export const distros: Distro[] = [
     release_date: new Date("2013-01-18"), // GNU Guix 0.1
     originCountry: "France",
     basedOn: "Independent",
-    logo_path: "/logos/guix.png",
     screenshot_path: "/screenshots/guix.webp",
     website: "https://guix.gnu.org",
     tags: [Tag.Diy, Tag.Libre, Tag.Terminal],
@@ -1313,7 +1231,6 @@ export const distros: Distro[] = [
     release_date: new Date("2004-02-28"), // as Hiweed Linux, 2004 (exact day undocumented)
     originCountry: "China",
     basedOn: "Debian",
-    logo_path: "/logos/deepin.png",
     screenshot_path: "/screenshots/deepin.webp",
     website: "https://www.deepin.org",
     tags: [Tag.Polished, Tag.Beginner, Tag.Stable],

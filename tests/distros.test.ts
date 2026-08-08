@@ -111,7 +111,6 @@ describe("links and assets", () => {
     "%s points its screenshot at its own slug",
     (_slug, d) => {
       expect(d.screenshot_path).toBe(`/screenshots/${d.slug}.webp`);
-      expect(d.logo_path).toBe(`/logos/${d.slug}.png`);
     },
   );
 
