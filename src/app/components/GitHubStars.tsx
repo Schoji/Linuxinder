@@ -67,17 +67,17 @@ const GitHubStars = ({ stars }: { stars: number | null }) => {
       }
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
-      whileHover={reducedMotion ? undefined : { scale: 1.05 }}
-      whileTap={reducedMotion ? undefined : { scale: 0.95 }}
+      // Deliberately not scaled. A scale of 1.05 turns the 1px ring into
+      // 1.05px: on the straight top and bottom that is one solid row plus a 5%
+      // ghost, while around the rounded ends the same width smears diagonally
+      // across two pixels at far higher coverage - so the ends read as a
+      // heavier, more saturated orange than the edges between them. Promoting
+      // the element to its own layer does not help, because the layer is still
+      // rasterised at the scaled size. Only whole-pixel movement keeps the ring
+      // even, so hover is carried by colour and press by a 1px nudge.
+      whileTap={reducedMotion ? undefined : { y: 1 }}
       transition={buttonSpring}
-      // will-change-transform is load-bearing, not a perf tweak. Scaling to
-      // 1.05 turns the 1px border into 1.05px, and at 36px tall against ~130px
-      // wide the horizontal and vertical edges land on different subpixel
-      // phases - so the top and bottom rendered a visibly paler orange than
-      // the sides on hover. Promoting the element to its own layer means it is
-      // rasterised once at its natural size and scaled as a texture, so every
-      // edge is treated identically.
-      className="flex items-center gap-2 h-9 pl-3 pr-1 rounded-full border border-[#3a3a5a] bg-[#232340] text-sm font-semibold text-foreground transition-colors hover:border-[#ff7354] cursor-pointer will-change-transform"
+      className="flex items-center gap-2 h-9 pl-3 pr-1 rounded-full border border-[#3a3a5a] bg-[#232340] text-sm font-semibold text-foreground transition-colors hover:border-[#ff7354] hover:bg-[#2a2a4d] cursor-pointer"
     >
       <GitHubMark />
       <span className="hidden sm:inline">Star</span>
