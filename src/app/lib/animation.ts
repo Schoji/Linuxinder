@@ -10,13 +10,6 @@
 export const DECK_OFFSET = 24;
 export const DECK_SCALE_STEP = 0.02;
 
-// How much darker each step back into the deck sits. Enough to read as behind,
-// not so much that the stack looks like a shadow. The front card animates up
-// from exactly one step of this on mount - a card promoted out of the deck
-// that simply lost its filter jumped to full brightness in a single frame,
-// which is visible as a flicker at the moment the eye is on it.
-export const DECK_DIM_STEP = 0.18;
-
 // rotate = x / ROTATE_DIVISOR while dragging, so the thrown copy can pick the
 // tilt up mid-flight instead of snapping back to level.
 export const ROTATE_DIVISOR = 20;
