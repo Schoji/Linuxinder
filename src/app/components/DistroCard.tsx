@@ -2,7 +2,7 @@ import React from "react";
 import { Distro } from "../data/models/distro";
 import Image from "next/image";
 
-const CardProper = ({
+const DistroCard = ({
   distro,
   small,
   priority = false,
@@ -57,7 +57,7 @@ const CardProper = ({
     // bar of its own, so nothing has to sit on top of the screenshot. A hairline
     // border carries the edge - on a dark background a shadow alone is invisible.
     <div
-      className={`${size.card} rounded-xl overflow-hidden dark:bg-[#232340] border border-[#3a3a5a] ${
+      className={`${size.card} rounded-xl overflow-hidden bg-[#232340] border border-[#3a3a5a] ${
         glow
           ? // Halo first so it paints above the drop shadow, and spread 0 rather
             // than negative so it keeps its width around the corners too.
@@ -138,4 +138,4 @@ const CardProper = ({
   );
 };
 
-export default CardProper;
+export default DistroCard;

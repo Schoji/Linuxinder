@@ -14,7 +14,7 @@ export default function GlobalError({
 }) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col items-center justify-center gap-6 px-6 text-center bg-zinc-50 dark:bg-[#1a1a2e]">
+      <body className="min-h-full flex flex-col items-center justify-center gap-6 px-6 text-center bg-[#1a1a2e]">
         <h1 className="text-4xl font-bold bg-linear-to-r from-[#ff4a58] to-[#ff7354] bg-clip-text text-transparent">
           Linuxinder is down
         </h1>
