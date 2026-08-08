@@ -6,6 +6,7 @@ import { motion, useMotionValue, useTransform, type PanInfo } from "motion/react
 import { Distro } from "../data/models/distro";
 import { useMotionPresets } from "../hooks/use_motion_presets";
 import {
+  DECK_DIM_STEP,
   DECK_OFFSET,
   DECK_SCALE_STEP,
   GLOW_FULL,
@@ -93,8 +94,12 @@ const SwipeCard = ({ distro, priority, onCommit }: Props) => {
       // to exactly what it was dimmed to there, so promotion is one continuous
       // move rather than a cut. Brightness used to be left out of this, and a
       // card arriving at full brightness in one frame read as a flicker.
-      initial={{ y: DECK_OFFSET, scale: 1 - DECK_SCALE_STEP }}
-      animate={{ y: 0, scale: 1 }}
+      initial={{
+        y: DECK_OFFSET,
+        scale: 1 - DECK_SCALE_STEP,
+        filter: `brightness(${1 - DECK_DIM_STEP})`,
+      }}
+      animate={{ y: 0, scale: 1, filter: "brightness(1)" }}
       transition={spring}
       onDragEnd={onDragEnd}
     >
